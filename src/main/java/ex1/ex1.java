@@ -6,17 +6,17 @@ public class ex1 {
     public static void main(String[] args) {
 
 
-        everySecondChar2(s->{
-            StringBuilder returnVal = new StringBuilder();
-            for (int i = 0; i < s.length(); i++) {
-                if (i % 2 == 1) {
-                    returnVal.append(s.charAt(i));
-
-                }
-            }
-            return returnVal.toString();
-
-        });
+//        everySecondChar3(s->{
+//            StringBuilder returnVal = new StringBuilder();
+//            for (int i = 0; i < s.length(); i++) {
+//                if (i % 2 == 1) {
+//                    returnVal.append(s.charAt(i));
+//
+//                }
+//            }
+//            return returnVal.toString();
+//
+//        });
 
         Function<String, String> function1 = (s-> {  //aici definesc functia
             StringBuilder returnVal = new StringBuilder();
@@ -29,6 +29,8 @@ public class ex1 {
             return returnVal.toString();
         });
         System.out.println(function1.apply("1234567890")); //aici apelez functia
+
+        everySecondChar3(function1,"1234567890"); //aici apelez functia cu parametrii
 
     }
 
@@ -43,8 +45,8 @@ public class ex1 {
         return returnVal.toString();
     }
 
-    public static void everySecondChar2(Function<String, String> function ){
-        System.out.println(function.apply("1234567890"));
+    public static void everySecondChar3(Function<String, String> function,String source ){
+             System.out.println(function.apply(source));
     }
 
 
